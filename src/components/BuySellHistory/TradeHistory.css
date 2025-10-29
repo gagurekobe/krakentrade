@@ -1,0 +1,10 @@
+.trade-details-content{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgb(45, 49, 74);
+    padding-bottom: 10px;
+}
+td{
+    text-align:start;
+}

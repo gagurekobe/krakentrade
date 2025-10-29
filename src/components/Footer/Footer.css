@@ -1,0 +1,28 @@
+.footer-main-container{
+    display: flex;
+    flex-direction: row;
+}
+.footer-listitem-contents ul li{
+    text-align: start;
+}
+.footer-listitem-contents h3{
+    text-align: start;
+}
+.footer-listitem-contents ul li:hover{
+    text-decoration: underline;
+
+}
+.about-company-container{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    width: 50%;
+}
+@media(max-width:768px){
+    .footer-main-container{
+        flex-direction: column;
+    }
+    .about-company-container{
+        width: 98%;
+    }
+}

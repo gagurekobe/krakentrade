@@ -1,0 +1,26 @@
+.trade-details-content{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgb(45, 49, 74);
+    padding-bottom: 10px;
+}
+.image-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .image-modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+    border: 3px solid #fff;
+  }

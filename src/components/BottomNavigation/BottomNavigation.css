@@ -1,0 +1,43 @@
+/* BottomNavigation.css */
+
+.bottom-navigation {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #0a0f1f;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-item {
+    color: #b0b0b0;
+    text-decoration: none;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Stack icon and text vertically */
+    align-items: center; /* Center items horizontally */
+  }
+  
+  .nav-icon {
+    font-size: 20px;
+    margin-bottom: 4px; /* Space between icon and text */
+  }
+  
+  .nav-item span {
+    font-size: 12px;
+  }
+  
+  .active {
+    color: #39ff14; /* Green color for active link */
+  }
+  
+  /* Responsive Styles */
+  @media (min-width: 769px) {
+    .bottom-navigation {
+      display: none; /* Hide bottom nav on larger screens */
+    }
+  }

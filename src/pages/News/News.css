@@ -1,0 +1,10 @@
+.news-container{
+    margin-top: 50px;
+}
+.news-card{
+    color: white;
+    border-radius: 10px;
+}
+.news-card p{
+    color: gray;
+}

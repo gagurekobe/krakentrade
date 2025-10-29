@@ -1,0 +1,52 @@
+.min-max-container{
+    border-radius: 5px;
+    padding: 10px;
+}
+.min-max-container .minimum-trading-amount-container{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+.min-max-container .maximum-trading-amount-container{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+@media(max-width:768px){
+    .expiration-times{
+        width: 110px;
+        font-size: 14px;
+    }
+}
+@media(max-width:378px){
+    .trade-popup-main-cont{
+        width: 100%;
+    }
+    .expiration-times{
+        width: 100px;
+        font-size: 12px;
+    }
+    .min-max-container{
+        margin: 0;
+    }
+    .min-max-container .minimum-trading-amount-container{
+        font-size: 12px;
+    }
+    .min-max-container .maximum-trading-amount-container{
+        font-size: 12px;
+    }
+    .estimated-income{
+        font-size: 14px;
+    }
+    .select-expiration-time-txt{
+        margin: 5px;
+    }
+    .trade-popup-close-btn{
+        position: relative;
+        right: 0;
+        top: 0;
+        margin: 0;
+        width: 80px;
+        height: 60px;
+    }
+}

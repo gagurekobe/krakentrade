@@ -1,0 +1,482 @@
+/* Chat Icon Container and Badge */
+.chat-icon-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: inline-block;
+}
+
+.chat-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #ff4d4f;
+  color: white;
+  border-radius: 50%;
+  padding: 2px;
+  font-size: 12px;
+  min-width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  z-index: 1001;
+}
+
+/* Toast Notification Styles */
+.Toastify__toast {
+  border-radius: 8px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.Toastify__toast--info {
+  background: #0893c2;
+  color: white;
+}
+
+.Toastify__progress-bar {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.chat-icon {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-color: #03f494;
+  color: black;
+  border-radius: 40%;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: bottom 0.3s ease-in-out;
+  text-align: center;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-icon i {
+  margin: auto;
+}
+
+/* Chat Popup Styles */
+.chat-popup {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 400px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  max-height: 850px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  animation: popupAnim 0.3s ease-in-out;
+  padding-top: 0;
+}
+
+/* Chat Header Styles */
+.chat-header {
+  width: 100%;
+  color: rgb(60, 58, 58);
+  font-size: 18px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 6px 6px 0 0;
+  margin: 0;
+  background-color: #087336;
+}
+
+.chat-header span {
+  margin-left: 20px;
+  color: white;
+}
+
+/* Messages Section */
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.message {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px;
+  margin-bottom: 22px;
+  border-radius: 8px;
+  max-width: 75%;
+  word-wrap: break-word;
+  position: relative;
+  margin-left: 45px; /* Space for avatar */
+}
+
+.message-avatar {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  position: absolute;
+  left: -40px;
+  top: 0;
+}
+
+.messages .user {
+  background-color: #5f778f;
+  color: white;
+  margin-left: auto; /* Push user messages to right */
+  margin-right: 10px;
+}
+
+.messages .admin {
+  background-color: #dbd8d8;
+  color: black;
+  margin-right: auto; /* Keep admin messages on left */
+}
+
+/* Two-column layout for message content */
+.message-content-wrapper {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+.message-menu-wrapper {
+  width: 10%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.message-content {
+  position: relative;
+  width: 100%;
+  padding-bottom: 15px; /* Make room for timestamp */
+  text-align: start; /* Ensure text aligns to start */
+}
+
+.message-time {
+  font-size: 11px;
+  position: absolute;
+  bottom: -5px;
+  right: 0;
+}
+
+.messages .user .message-time {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.messages .admin .message-time {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.user-avatar {
+  width: 100%;
+  height: 100%;
+  background-color: #5f778f;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+  border: 2px solid white;
+}
+
+.admin-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+}
+
+/* Three-dot Menu */
+.message-menu-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.menu-toggle-btn {
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  padding: 3px 6px;
+  font-size: 16px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.message-menu {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  min-width: 120px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+}
+
+.menu-item:hover {
+  background-color: #f5f5f5;
+}
+
+.menu-item i {
+  width: 16px;
+  text-align: center;
+}
+
+/* Edit Message Container */
+.edit-message-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.edit-textarea {
+  width: 100%;
+  min-height: 60px;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  margin-bottom: 8px;
+  font-family: inherit;
+}
+
+.edit-buttons {
+  display: flex;
+  gap: 5px;
+  justify-content: flex-end;
+}
+
+.save-edit-btn, .cancel-edit-btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.save-edit-btn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.cancel-edit-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Input Section */
+.input-container {
+  width: 98%;
+  margin: auto;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid rgb(232, 230, 230);
+  margin-bottom: 10px;
+}
+
+.input-field {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  min-height: 60px;
+  resize: none;
+  margin: 10px;
+}
+
+.send-button {
+  width: 45px;
+  height: 45px;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: auto;
+}
+
+.send-button i {
+  font-size: 20px;
+  margin-bottom: 20px;
+  margin-right: 10px;
+}
+
+/* Image Upload Styles */
+.chat-image-upload {
+  border-radius: 8px;
+  max-width: 200px;
+  margin-top: 8px;
+  display: block;
+  text-align: start; /* Ensure images align to start */
+}
+
+.message.preview {
+  opacity: 0.7;
+}
+
+.upload-icon {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  color: #666;
+  cursor: pointer;
+}
+
+.upload-icon:hover {
+  color: #333;
+}
+
+/* Image container with delete button */
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.delete-image-btn {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #ff4d4f;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.delete-image-btn:hover {
+  background: #f44336;
+  transform: scale(1.1);
+}
+
+/* Admin Chat Specific Styles */
+.admin-chat-container {
+  background-color: #080808;
+  border-radius: 8px;
+  width: 96%;
+  margin: 0 auto;
+  margin-top: 100px;
+  display: flex;
+  height: 100%;
+  gap: 20px;
+  padding: 20px;
+}
+
+.users-list {
+  width: 300px;
+  background: white;
+  border-radius: 8px;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+.user-button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  background: #f5f5f5;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.user-msg-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.username-avatar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .chat-popup {
+    width: 96%;
+    height: 540px;
+    bottom: 160px;
+    right: 4px;
+  }
+  .chat-icon-container{
+    bottom:80px;
+  }
+  /* .chat-icon {
+    bottom: 80px;
+  } */
+  .admin-chat-container {
+    flex-direction: column;
+  }
+  .users-list {
+    width: 100%;
+  }
+  
+  .delete-image-btn {
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chat-popup {
+    width: 96%;
+  }
+}
+
+@media (max-width: 376px) {
+  .chat-popup {
+    height: 500px;
+  }
+}

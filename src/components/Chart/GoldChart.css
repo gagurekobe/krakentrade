@@ -1,0 +1,48 @@
+.gold-chart {
+    width: 100%;
+    margin: auto;
+    background: #080808;
+    margin-bottom: 20px;
+    margin: 0 !important;
+    padding: 0;
+    border: none !important;
+  }
+  
+  .gold-chart__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .gold-chart__header h3 {
+    color: #ffffff;
+    margin: 0;
+  }
+  
+  .gold-chart__container {
+    height: 1000px;
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+  }
+  
+  /* Make chart responsive */
+  @media (max-width: 1200px) {
+    .gold-chart__container {
+      width: 100%;
+      height: 500px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .gold-chart {
+      width: 100%;
+    }
+    .gold-chart__container {
+      width: 100%;
+      height: 600px;
+      margin-left: 0;
+    }
+  }

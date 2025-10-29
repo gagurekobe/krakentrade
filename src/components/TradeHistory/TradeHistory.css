@@ -1,0 +1,16 @@
+.trade-details-content{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    bottom: 1px solid green; 
+    padding-bottom: 10px;
+}
+.two-together{
+    border-radius: 5px;
+}
+
+@media (max-width:380px){
+    .trade-history-popup{
+        width:90%;
+    }
+}

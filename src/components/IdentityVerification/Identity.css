@@ -1,0 +1,30 @@
+.document-upload-main-container{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.identity-upload-container{
+    width: 200px;
+}
+.identity-form-container{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+}
+.identity-form-container button{
+    width: 100%;
+    background-color: rgb(10, 131, 131);
+}
+
+@media(max-width:768px){
+    .identity-upload-container{
+        width: 96%;
+    }
+    .identity-form-container button{
+        width: 90%;
+    }
+    .identity-form-container{
+        width: 98%;
+    }
+}
